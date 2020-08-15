@@ -1,10 +1,23 @@
 name: Send New Issue to Telegram Group
-# https://github.com/appleboy/telegram-action
+# Telegram Notify Action
 # https://github.com/marketplace/actions/telegram-notify
+# 
+# Github Actions reference
 # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#issues
+# https://developer.github.com/webhooks/event-payloads/#issues
+# https://docs.github.com/en/rest/reference/issues#get-an-issue
+# 
+# To get TELEGRAM_TOKEN
+# https://core.telegram.org/bots/api
+# 
+# To get TELEGRAM_TO
+# https://api.telegram.org/bot<apiToken>/getUpdates
+# Go for chat id
 
-on: issues
-  types: [opened]
+on:
+  issues:
+    types:
+      - opened
 jobs:
   send-to-group:
     runs-on: ubuntu-latest
@@ -15,7 +28,9 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: The ${{ github.event_name }} event triggered first step.
-          message: |
-            Enviar aqui o corpo da mensagem.
-            O corpo da mensagem pode conter quebras de linha.
+          format: html
+          args: |
+            <b>Título:</b> ${{ github.event.issue.title }}
+            <b>Categoria:</b> ${{join(github.event.issue.labels.*.name, ', ')}}
+            <b>Descrição:</b> ${{ github.event.issue.body }}
+            <b>Link:</b> ${{ github.event.issue.html_url }}
