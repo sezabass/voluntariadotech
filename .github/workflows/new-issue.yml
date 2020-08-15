@@ -1,0 +1,21 @@
+name: Send New Issue to Telegram Group
+# https://github.com/appleboy/telegram-action
+# https://github.com/marketplace/actions/telegram-notify
+# https://docs.github.com/en/actions/reference/events-that-trigger-workflows#issues
+
+on: issues
+  types: [opened]
+jobs:
+  send-to-group:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Send custom message with args
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: The ${{ github.event_name }} event triggered first step.
+          message: |
+            Enviar aqui o corpo da mensagem.
+            O corpo da mensagem pode conter quebras de linha.
