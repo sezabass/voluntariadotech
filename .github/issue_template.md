@@ -1,4 +1,4 @@
-# Informações importantes
+# Informações importantes!
 Para que as vagas enviadas neste mural sejam disponibilizadas da forma correta, as mesmas devem seguir as seguintes regras:
 1. **Lembre-se de adicionar as labels!** É muito importante que as pessoas possam buscar por vagas de aprendizagem e/ou de ensino.
 2. Procure utilizar termos e descrições que façam o mínimo de distinção de gênero. Por exemplo, utilize "Desenvolvedor(a)", "Programador ou Programadora" ou "Pessoa".
