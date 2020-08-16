@@ -30,7 +30,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: html
           args: |
-            <b>Título:</b> ${{ github.event.issue.title }}
-            <b>Categoria:</b> ${{join(github.event.issue.labels.*.name, ', ')}}
-            <b>Descrição:</b> ${{ github.event.issue.body }}
-            <b>Link:</b> ${{ github.event.issue.html_url }}
+            <b>${{ github.event.issue.title }}</b>
+            <i>[${{join(github.event.issue.labels.*.name, ', ')}}]</i>
+            ${{ github.event.issue.html_url }}
