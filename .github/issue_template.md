@@ -28,7 +28,7 @@ Remoto ou Escritório no Rio de Janeiro - Tijuca
 - eventos sociais, meetups, etc
 - ...
 
-# Conhecimento prévio necessário
+## Conhecimento prévio necessário
 
 - Básicos de algoritmo
 - Noções de orientação a objeto
@@ -45,7 +45,7 @@ Tempo máximo de 6 meses;
 5 horas semanais
 
 
-## Nossa empresa
+## Nossa ONG
 
 Aqui na Corporação ACME somos líderes em...
 
